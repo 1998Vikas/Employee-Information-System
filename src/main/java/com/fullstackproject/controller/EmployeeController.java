@@ -24,6 +24,7 @@ public class EmployeeController {
 @Autowired
    private EmployeeService employeeService;
 Logger logger= LoggerFactory.getLogger(EmployeeController.class);
+    @Cacheable("Employee")
     @GetMapping("/all")
     public ResponseEntity<List<Employee>> getEmployee(){
         logger.info("Getting data of employee");

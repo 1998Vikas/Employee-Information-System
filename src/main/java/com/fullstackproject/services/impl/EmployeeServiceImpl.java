@@ -5,6 +5,7 @@ import com.fullstackproject.exceptions.EmployeeAlreadyExistException;
 import com.fullstackproject.exceptions.EmployeeNotFoundException;
 import com.fullstackproject.repositories.EmployeeRepository;
 import com.fullstackproject.services.EmployeeService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getAll() {
+        System.out.println("Get method called");
         List<Employee> all = employeeRepository.findAll();
         return all;
     }
